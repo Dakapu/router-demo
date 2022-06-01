@@ -17,9 +17,9 @@ class App extends Component {
           <NavBar />
           <div className="content">
             <Routes>
-              <Route path="/products" element={<Products />} />
-              <Route path="/posts" element={<Posts />} />
-              <Route path="/admin" element={<Dashboard />} />
+              <Route path="/products/*" element={<Products />} />
+              <Route path="/posts/*" element={<Posts />} />
+              <Route path="/admin/*" element={<Dashboard />} />
               <Route path="/" element={<Home />} />
             </Routes>
           </div>
