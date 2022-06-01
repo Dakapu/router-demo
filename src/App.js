@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Products from "./components/products";
 import Posts from "./components/posts";
@@ -29,8 +29,13 @@ class App extends Component {
                 </Route>
                 <Route path="" element={<Posts />} />
               </Route>
+              <Route
+                path="/messages"
+                element={<Navigate replace to="/posts" />}
+              />
               <Route path="/admin/*" element={<Dashboard />} />
-              <Route path="/" element={<Home />} />
+              <Route path="/" exact element={<Home />} />
+              <Route path="*" element={<NotFound to="/not-found" replace />} />
             </Routes>
           </div>
         </React.StrictMode>
