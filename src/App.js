@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/navbar";
 import Products from "./components/products";
 import Posts from "./components/posts";
@@ -12,7 +13,17 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        <React.StrictMode>
+          <NavBar />
+          <div className="content">
+            <Routes>
+              <Route path="/products" element={<Products />} />
+              <Route path="/posts" element={<Posts />} />
+              <Route path="/admin" element={<Dashboard />} />
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </div>
+        </React.StrictMode>
       </div>
     );
   }
