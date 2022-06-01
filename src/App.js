@@ -17,7 +17,11 @@ class App extends Component {
           <NavBar />
           <div className="content">
             <Routes>
-              <Route path="/products/*" element={<Products />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route
+                path="/products/*"
+                element={<Products sortBy="newest" />}
+              />
               <Route path="/posts/*" element={<Posts />} />
               <Route path="/admin/*" element={<Dashboard />} />
               <Route path="/" element={<Home />} />
