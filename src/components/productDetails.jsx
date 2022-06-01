@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 
 export default function ProductDetails() {
   let params = useParams();
-  console.log("Params: ", params);
   return (
     <div>
       <h1>Product Details - {params.id}</h1>

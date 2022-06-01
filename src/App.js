@@ -22,7 +22,13 @@ class App extends Component {
                 path="/products/*"
                 element={<Products sortBy="newest" />}
               />
-              <Route path="/posts/*" element={<Posts />} />
+              <Route path="/posts" element={<Posts />}>
+                <Route path=":year" element={<Posts />}>
+                  <Route path=":month" element={<Posts />} />
+                  <Route path="" element={<Posts />} />
+                </Route>
+                <Route path="" element={<Posts />} />
+              </Route>
               <Route path="/admin/*" element={<Dashboard />} />
               <Route path="/" element={<Home />} />
             </Routes>
